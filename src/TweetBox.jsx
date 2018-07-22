@@ -46,7 +46,7 @@ export default class TweetBox extends React.Component {
     this.props.handleDeleteAlert();
   }
   handleRetweet(tweet) {
-    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: tweet.date}
+    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: new Date().toLocaleString() }
     this.setState({ tweets: this.state.tweets.concat(tweetObj) });
     this.props.handleRetweetAlert();
   }
