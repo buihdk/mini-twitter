@@ -1,0 +1,77 @@
+header {
+  background-image: url('background.jpeg');
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
+  color: white;
+}
+
+.avatar {
+  width: 200px;
+  border: 6px white solid;
+  border-radius: 50%;
+  position: relative;
+  top: -6rem;
+}
+
+.tweetbox {
+  height: 60px;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+}
+
+.input-group {
+  position: relative;
+}
+
+.tweet {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  word-wrap: break-word;
+}
+
+.avatar-tweet {
+  width: 64px;
+  border-radius: 50%;
+}
+
+.fa-retweet,
+.fa-heart,
+.fa-trash-alt,
+.sub-text {
+  color: lightgray;
+  font-size: 16px;
+}
+
+.fa-retweet,
+.fa-heart:hover,
+.fa-trash-alt:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.fa-heart.liked {
+  color: red;
+}
+
+.alert {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: unset;
+}
+
+.alert-shown {
+  opacity: 1;
+  transition: all 250ms linear;
+}
+
+.alert-hidden {
+  opacity: 0;
+  transition: all 250ms linear;
+}
+
