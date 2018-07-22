@@ -19,29 +19,20 @@ export default class TweetBox extends React.Component {
       charsRemaining: 140 - inputText.length,
     });
   }
-  clearInput() {
-    let input = document.getElementById("tweetInput");
-    input.value = "";
-    this.setState({ 
-      text: "", 
-      charsRemaining: 140, 
-    });
-  }
   handleTweet(stateText) {
-    let tweetObj = {
-      id: idCounter++,
-      text: stateText,
-      liked: false
-    }
+    let tweetObj = { id: idCounter++, text: stateText, liked: false, date: new Date().toLocaleString() }
+    document.getElementById("tweetInput").value = "";
     this.setState({
+      text: "",
+      charsRemaining: 140,
       tweets: this.state.tweets.concat(tweetObj),
     });
-    this.props.handleTweetAlert();
+    this.props.handleTweetAlert();  
   }
   handleLike(tweet) {
     let tweets = this.state.tweets.map((t) => {
       if (t.id === tweet.id) {
-        return { id: t.id, text: t.text, liked: !t.liked }
+        return { id: t.id, text: t.text, liked: !t.liked, date: t.date }
       }
       return t;
     })
@@ -55,14 +46,8 @@ export default class TweetBox extends React.Component {
     this.props.handleDeleteAlert();
   }
   handleRetweet(tweet) {
-    let tweetObj = {
-      id: idCounter++,
-      text: tweet.text,
-      liked: tweet.liked
-    }
-    this.setState({
-      tweets: this.state.tweets.concat(tweetObj),
-    });
+    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: tweet.date}
+    this.setState({ tweets: this.state.tweets.concat(tweetObj) });
     this.props.handleRetweetAlert();
   }
   render() {
@@ -81,7 +66,6 @@ export default class TweetBox extends React.Component {
                 <div className="input-group-append">
                   <button className="btn btn-primary"
                     onClick={() => this.handleTweet(this.state.text)} 
-                    onBlur={() => this.clearInput()}
                     disabled={this.state.charsRemaining < 0}>
                     Tweet &ensp; <i className="fab fa-twitter"></i>
                   </button> 
