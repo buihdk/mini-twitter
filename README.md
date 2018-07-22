@@ -3,11 +3,12 @@
 Author: **Khoa Bui**
 
 ## List of things that have been implemented:
-* [x] Styling using frameworks like Bulma.
-* [x] Adding user avatars and “time ago” to Tweets.
-* [x] Adding in animations.
-* [x] Creating a Re-tweet button that “copies” the Tweet.
-* [x] Add alerts for when a Tweet is Tweeted, Deleted, or Re-tweeted.
+* [x] Styled using Bootstrap framework and Fontawesome.
+* [x] Added user avatars and “time ago” to Tweets.
+* [x] Added background image and favicon.
+* [x] Created a Re-tweet button that “copies” the Tweet.
+* [x] Added alerts for when a Tweet is Tweeted, Deleted, or Re-tweeted.
+* [x] Published on github pages https://www.buihdk.com/mini-twitter/
 
 ## List of things that will be implemented:
 * [ ] Adding an ID field to each Tweet.
