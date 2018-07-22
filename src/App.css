@@ -75,3 +75,12 @@ header {
 .fa-heart.liked {
   color: red;
 }
+
+@media (max-width: 576px) { 
+  header {
+    height: 300px;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+}

@@ -67,9 +67,9 @@ export default class TweetBox extends React.Component {
                   <button className="btn btn-primary"
                     onClick={() => this.handleTweet(this.state.text)} 
                     disabled={this.state.charsRemaining < 0}>
-                    Tweet &ensp; <i className="fab fa-twitter"></i>
+                    <span className="mobile-hidden">Tweet&ensp;</span><i className="fab fa-twitter"></i>
                   </button> 
-                  <p className="my-auto" style={{opacity: 0.5}}>&nbsp;{this.state.charsRemaining} chars left</p>
+                  <p className="my-auto mobile-hidden" style={{opacity: 0.5}}>&nbsp;{this.state.charsRemaining} chars left</p>
                 </div>
               </div>
               <div className="container mt-5">
