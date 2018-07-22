@@ -7,6 +7,7 @@ Author: **Khoa Bui**
 * [x] Adding user avatars and “time ago” to Tweets.
 * [x] Adding in animations.
 * [x] Creating a Re-tweet button that “copies” the Tweet.
+* [x] Add alerts for when a Tweet is Tweeted, Deleted, or Re-tweeted.
 
 ## List of things that will be implemented:
 * [ ] Adding an ID field to each Tweet.
@@ -18,6 +19,7 @@ Author: **Khoa Bui**
 Here's a walkthrough of the app:
 
 <img src="https://i.imgur.com/MgZW3RQ.gif" alt="mini twitter"/>
+link: https://i.imgur.com/MgZW3RQ.gif
 
 ## License
 
