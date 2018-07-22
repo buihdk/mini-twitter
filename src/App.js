@@ -37,7 +37,7 @@ class App extends Component {
           Your Tweet has been retweeted!
         </div>
         <header/>
-        <TweetBox 
+        <TweetBox
           placeholder="What's your status?" 
           handleTweetAlert={this.handleTweetAlert.bind(this)}
           handleDeleteAlert={this.handleDeleteAlert.bind(this)}

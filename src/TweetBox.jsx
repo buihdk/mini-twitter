@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Tweet from './Tweet';
 
+let idCounter = 0;
+
 export default class TweetBox extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +29,7 @@ export default class TweetBox extends React.Component {
   }
   handleTweet(stateText) {
     let tweetObj = {
+      id: idCounter++,
       text: stateText,
       liked: false
     }
@@ -37,8 +40,8 @@ export default class TweetBox extends React.Component {
   }
   handleLike(tweet) {
     let tweets = this.state.tweets.map((t) => {
-      if (t.text === tweet.text) {
-        return { text: t.text, liked: !t.liked }
+      if (t.id === tweet.id) {
+        return { id: t.id, text: t.text, liked: !t.liked }
       }
       return t;
     })
@@ -46,13 +49,14 @@ export default class TweetBox extends React.Component {
   }
   handleDelete(tweet) {
     let tweets = this.state.tweets.filter(function(t) {
-      return t.text !== tweet.text;
+      return t.id !== tweet.id;
     })
     this.setState({ tweets });
     this.props.handleDeleteAlert();
   }
   handleRetweet(tweet) {
     let tweetObj = {
+      id: idCounter++,
       text: tweet.text,
       liked: tweet.liked
     }
@@ -85,8 +89,8 @@ export default class TweetBox extends React.Component {
                 </div>
               </div>
               <div className="container mt-5">
-                {this.state.tweets.map(((tweet) => 
-                  <Tweet tweet={tweet} 
+                {this.state.tweets.map(((tweet, index) => 
+                  <Tweet tweet={tweet} key={index}
                     handleLike={this.handleLike.bind(this)}
                     handleDelete={this.handleDelete.bind(this)}
                     handleRetweet={this.handleRetweet.bind(this)}
