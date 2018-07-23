@@ -15,12 +15,8 @@ Author: **Khoa Bui**
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets
 * [ ] Add in better state management with a framework like Redux.
 
-## Video Walkthrough 
-
-Here's a walkthrough of the app:
-
-<img src="https://i.imgur.com/MgZW3RQ.gif" alt="mini twitter"/>
-link: https://i.imgur.com/MgZW3RQ.gif
+## Demo
+Here's a link to demo the app: https://www.buihdk.com/mini-twitter/
 
 ## License
 

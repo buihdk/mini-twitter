@@ -21,7 +21,7 @@ header {
   background-image: url('background.jpeg');
   background-position: center center;
   background-size: cover;
-  height: 500px;
+  height: 450px;
   color: white;
 }
 
@@ -39,10 +39,6 @@ header {
   width: 100%;
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
-}
-
-.input-group {
-  position: relative;
 }
 
 .tweet {

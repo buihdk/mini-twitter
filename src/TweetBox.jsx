@@ -21,12 +21,12 @@ export default class TweetBox extends React.Component {
   }
   handleTweet(stateText) {
     let tweetObj = { id: idCounter++, text: stateText, liked: false, date: new Date().toLocaleString() }
-    document.getElementById("tweetInput").value = "";
     this.setState({
       text: "",
       charsRemaining: 140,
       tweets: this.state.tweets.concat(tweetObj),
     });
+    this.refs.tweetInput.value = "";
     this.props.handleTweetAlert();  
   }
   handleLike(tweet) {
@@ -60,11 +60,11 @@ export default class TweetBox extends React.Component {
             </div>
             <div className="col-sm-12 col-md-9">
               <div className="input-group px-4">
-                <input id="tweetInput" type="text" className="form-control" 
+                <input ref="tweetInput" type="text" className="form-control" 
                   placeholder={this.props.placeholder}
                   onChange={e => this.handleTextChange(e.target.value)}/>
                 <div className="input-group-append">
-                  <button className="btn btn-primary"
+                  <button className="btn btn-primary" type="submit" value="submit"
                     onClick={() => this.handleTweet(this.state.text)} 
                     disabled={this.state.charsRemaining < 0}>
                     <span className="mobile-hidden">Tweet&ensp;</span><i className="fab fa-twitter"></i>
@@ -72,7 +72,7 @@ export default class TweetBox extends React.Component {
                   <p className="my-auto mobile-hidden" style={{opacity: 0.5}}>&nbsp;{this.state.charsRemaining} chars left</p>
                 </div>
               </div>
-              <div className="container mt-5">
+              <div className="container mt-4">
                 {this.state.tweets.map(((tweet, index) => 
                   <Tweet tweet={tweet} key={index}
                     handleLike={this.handleLike.bind(this)}
