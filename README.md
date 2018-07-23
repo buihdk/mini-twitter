@@ -8,7 +8,6 @@ Author: **Khoa Bui**
 * [x] Added background image and favicon.
 * [x] Created a Re-tweet button that “copies” the Tweet.
 * [x] Added alert animations for when a Tweet is Tweeted, Deleted, or Re-tweeted.
-* [x] Published on github pages https://www.buihdk.com/mini-twitter/
 * [x] Added an ID field to each Tweet.
 
 ## List of things that will be implemented:
@@ -19,7 +18,6 @@ Author: **Khoa Bui**
 Here's a link to demo the app: https://www.buihdk.com/mini-twitter/
 
 ## License
-
     © Khoa Bui 2018 
 
     Licensed under the Apache License, Version 2.0 (the "License");
