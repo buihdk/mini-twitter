@@ -7,13 +7,13 @@ Author: **Khoa Bui**
 * [x] Added user avatars and “time ago” to Tweets.
 * [x] Added background image and favicon.
 * [x] Created a Re-tweet button that “copies” the Tweet.
-* [x] Added alerts for when a Tweet is Tweeted, Deleted, or Re-tweeted.
+* [x] Added alert animations for when a Tweet is Tweeted, Deleted, or Re-tweeted.
 * [x] Published on github pages https://www.buihdk.com/mini-twitter/
-* [x] Adding an ID field to each Tweet.
+* [x] Added an ID field to each Tweet.
 
 ## List of things that will be implemented:
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets
-* [ ] Adding in better state management with a framework like Redux.
+* [ ] Add in better state management with a framework like Redux.
 
 ## Video Walkthrough 
 
