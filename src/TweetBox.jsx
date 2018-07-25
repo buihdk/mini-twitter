@@ -26,7 +26,6 @@ export default class TweetBox extends React.Component {
       charsRemaining: 140,
       tweets: this.state.tweets.concat(tweetObj),
     });
-    this.refs.tweetInput.value = "";
     this.props.handleTweetAlert();  
   }
   handleLike(tweet) {
@@ -62,6 +61,7 @@ export default class TweetBox extends React.Component {
               <div className="input-group px-4">
                 <input ref="tweetInput" type="text" className="form-control" 
                   placeholder={this.props.placeholder}
+                  value={this.state.text}
                   onChange={e => this.handleTextChange(e.target.value)}/>
                 <div className="input-group-append">
                   <button className="btn btn-primary" type="submit" value="submit"
