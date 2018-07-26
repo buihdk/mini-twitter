@@ -5,17 +5,17 @@ Author: **Khoa Bui**
 ## List of things that have been implemented:
 * [x] Styled using Bootstrap framework and Fontawesome.
 * [x] Added user avatars and “time ago” to Tweets.
-* [x] Added background image and favicon.
+* [x] Added background image and snow animation.
 * [x] Created a Re-tweet button that “copies” the Tweet.
 * [x] Added alert animations for when a Tweet is Tweeted, Deleted, or Re-tweeted.
 * [x] Added an ID field to each Tweet.
-
+ 
 ## List of things that will be implemented:
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets
 * [ ] Add in better state management with a framework like Redux.
 
 ## Demo
-Here's a link to demo the app: https://www.buihdk.com/mini-twitter/
+https://www.buihdk.com/mini-twitter/
 
 ## License
     © Khoa Bui 2018 
