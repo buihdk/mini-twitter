@@ -59,7 +59,7 @@ export default class TweetBox extends React.Component {
             </div>
             <div className="col-sm-12 col-md-9">
               <div className="input-group px-4">
-                <input ref="tweetInput" type="text" className="form-control" 
+                <input type="text" className="form-control" 
                   placeholder={this.props.placeholder}
                   value={this.state.text}
                   onChange={e => this.handleInputChange(e.target.value)}/>
