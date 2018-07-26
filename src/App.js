@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TweetBox from './TweetBox';
+import Snow from './Snow';
 
 class App extends Component {
   constructor(props) {
@@ -36,13 +37,12 @@ class App extends Component {
         <div className={`alert alert-info ${this.state.retweetAlert ? 'shown' : 'hidden'}`}>
           Your Tweet has been retweeted!
         </div>
+        <Snow />
         <header/>
-        <TweetBox
-          placeholder="What's your status?" 
+        <TweetBox placeholder="What's your status?" 
           handleTweetAlert={this.handleTweetAlert.bind(this)}
           handleDeleteAlert={this.handleDeleteAlert.bind(this)}
-          handleRetweetAlert={this.handleRetweetAlert.bind(this)}
-        />
+          handleRetweetAlert={this.handleRetweetAlert.bind(this)} />
       </div>
     );
   }

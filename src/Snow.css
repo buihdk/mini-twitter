@@ -1,0 +1,24 @@
+.snow {
+	position: absolute;
+	height: 450px;
+	width: 100%;
+	top: 0;
+  left: 0;
+  overflow: hidden;
+}
+#snow-top-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 22.5s infinite linear;
+}
+#snow-bottom-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 45s infinite linear;
+}
+@media (max-width: 576px) { 
+  .snow { height: 300px; }
+}
+@keyframes fall {
+	100% { transform: translateY(0); }
+}
