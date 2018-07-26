@@ -27,13 +27,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className={`alert alert-success ${this.state.tweetAlert ? 'alert-shown' : 'alert-hidden'}`}>
+        <div className={`alert alert-success ${this.state.tweetAlert ? 'shown' : 'hidden'}`}>
           Your Tweet was sent!
         </div>
-        <div className={`alert alert-danger ${this.state.deleteAlert ? 'alert-shown' : 'alert-hidden'}`}>
+        <div className={`alert alert-danger ${this.state.deleteAlert ? 'shown' : 'hidden'}`}>
           Your Tweet has been deleted!
         </div>
-        <div className={`alert alert-info ${this.state.retweetAlert ? 'alert-shown' : 'alert-hidden'}`}>
+        <div className={`alert alert-info ${this.state.retweetAlert ? 'shown' : 'hidden'}`}>
           Your Tweet has been retweeted!
         </div>
         <header/>

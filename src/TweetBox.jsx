@@ -13,7 +13,7 @@ export default class TweetBox extends React.Component {
       charsRemaining: 140,
     };
   }
-  handleTextChange(inputText) {
+  handleInputChange(inputText) {
     this.setState({
       text: inputText,
       charsRemaining: 140 - inputText.length,
@@ -62,7 +62,7 @@ export default class TweetBox extends React.Component {
                 <input ref="tweetInput" type="text" className="form-control" 
                   placeholder={this.props.placeholder}
                   value={this.state.text}
-                  onChange={e => this.handleTextChange(e.target.value)}/>
+                  onChange={e => this.handleInputChange(e.target.value)}/>
                 <div className="input-group-append">
                   <button className="btn btn-primary" type="submit" value="submit"
                     onClick={() => this.handleTweet(this.state.text)} 

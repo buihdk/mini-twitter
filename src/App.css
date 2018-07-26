@@ -7,12 +7,12 @@
   z-index: 999;
 }
 
-.alert-shown {
+.shown {
   opacity: 0.85;
   transition: all 250ms linear;
 }
 
-.alert-hidden {
+.hidden {
   opacity: 0;
   transition: all 250ms linear;
 }
