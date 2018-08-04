@@ -9,7 +9,7 @@ export default class TweetBox extends React.Component {
     super(props);
     this.state = {
       tweets: [],
-      text: "",
+      text: '',
       charsRemaining: 140,
     };
   }
@@ -20,9 +20,9 @@ export default class TweetBox extends React.Component {
     });
   }
   handleTweet(stateText) {
-    let tweetObj = { id: idCounter++, text: stateText, liked: false, date: new Date().toLocaleString() }
+    let tweetObj = { id: idCounter++, text: stateText, liked: false, date: new Date().toLocaleString() };
     this.setState({
-      text: "",
+      text: '',
       charsRemaining: 140,
       tweets: this.state.tweets.concat(tweetObj),
     });
@@ -31,21 +31,21 @@ export default class TweetBox extends React.Component {
   handleLike(tweet) {
     let tweets = this.state.tweets.map((t) => {
       if (t.id === tweet.id) {
-        return { id: t.id, text: t.text, liked: !t.liked, date: t.date }
+        return { id: t.id, text: t.text, liked: !t.liked, date: t.date };
       }
       return t;
-    })
+    });
     this.setState({ tweets });
   }
   handleDelete(tweet) {
     let tweets = this.state.tweets.filter(function(t) {
       return t.id !== tweet.id;
-    })
+    });
     this.setState({ tweets });
     this.props.handleDeleteAlert();
   }
   handleRetweet(tweet) {
-    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: new Date().toLocaleString() }
+    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: new Date().toLocaleString() };
     this.setState({ tweets: this.state.tweets.concat(tweetObj) });
     this.props.handleRetweetAlert();
   }
