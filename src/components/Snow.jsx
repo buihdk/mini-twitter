@@ -1,5 +1,5 @@
 import React from 'react';
-import './Snow.css';
+import '../styles/Snow.css';
 
 export default class Snow extends React.Component {
   render() {
