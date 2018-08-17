@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import TweetBox from './components/TweetBox';
-import Snow from './components/Snow';
+import TweetBox from './components/TweetBox.js';
+import Snow from './components/Snow.js';
 
 class App extends Component {
   constructor(props) {
