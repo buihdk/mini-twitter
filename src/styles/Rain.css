@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+@media (max-width: 576px) { 
+  .rain-wrapper { height: 300px; }
+}
+
 .rain {
   background: white;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
