@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import TweetBox from './components/TweetBox.js';
 import Snow from './components/Snow.js';
+import Rain from './components/Rain.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      weatherSnowOrRain: false, 
       tweetAlert: false,
       deleteAlert: false,
       retweetAlert: false
@@ -37,7 +39,7 @@ class App extends Component {
         <div className={`alert alert-info ${this.state.retweetAlert ? 'shown' : 'hidden'}`}>
           Your Tweet has been retweeted!
         </div>
-        <Snow />
+        { this.state.weatherSnowOrRain ? <Snow /> : <Rain /> }
         <header/>
         <TweetBox placeholder="What's your status?" 
           handleTweetAlert={this.handleTweetAlert.bind(this)}
