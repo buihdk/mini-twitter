@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/App.css';
+
+import '../../App.css';
 
 const Tweet = (props) => {
   let tweet = props.tweet;

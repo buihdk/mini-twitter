@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/App.css';
-import Tweet from './Tweet.js';
+
+import Tweet from './Tweet';
+import '../../App.css';
 
 let idCounter = 0;
 

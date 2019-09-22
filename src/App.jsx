@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import TweetBox from './components/TweetBox.js';
-import Snow from './components/Snow.js';
-import Rain from './components/Rain.js';
-import './styles/App.css';
+import TweetBox from './components/tweet/TweetBox';
+import Snow from './components/snow/Snow';
+import Rain from './components/rain/Rain';
+import './App.css';
 
 class App extends Component {
   constructor(props) {

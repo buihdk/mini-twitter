@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/Rain.css';
+
+import './Rain.css';
 
 const Rain = () => {
   return (
