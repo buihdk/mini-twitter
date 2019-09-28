@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+  "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }]
+}

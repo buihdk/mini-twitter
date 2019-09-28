@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Tweet from './Tweet';
-import '../../App.css';
+import '../app/App.less';
 
-let idCounter = 0;
+const idCounter = 0;
 
 export default class TweetBox extends React.Component {
   constructor(props) {
@@ -14,71 +15,115 @@ export default class TweetBox extends React.Component {
       charsRemaining: 140,
     };
   }
+
   handleInputChange(inputText) {
     this.setState({
       text: inputText,
       charsRemaining: 140 - inputText.length,
     });
   }
+
   handleTweet(stateText) {
-    let tweetObj = { id: idCounter++, text: stateText, liked: false, date: new Date().toLocaleString() };
-    this.setState({
+    const { handleTweetAlert } = this.props;
+    const tweetObj = {
+      id: idCounter + 1,
+      text: stateText,
+      liked: false,
+      date: new Date().toLocaleString(),
+    };
+    this.setState(prevState => ({
       text: '',
       charsRemaining: 140,
-      tweets: this.state.tweets.concat(tweetObj),
-    });
-    this.props.handleTweetAlert();  
+      tweets: [...prevState.tweets, tweetObj],
+    }));
+    handleTweetAlert();
   }
+
   handleLike(tweet) {
-    let tweets = this.state.tweets.map((t) => {
+    let { tweets } = this.state;
+    tweets = tweets.map(t => {
       if (t.id === tweet.id) {
-        return { id: t.id, text: t.text, liked: !t.liked, date: t.date };
+        return {
+          id: t.id,
+          text: t.text,
+          liked: !t.liked,
+          date: t.date,
+        };
       }
       return t;
     });
     this.setState({ tweets });
   }
+
   handleDelete(tweet) {
-    let tweets = this.state.tweets.filter(function(t) {
-      return t.id !== tweet.id;
-    });
+    const { handleDeleteAlert } = this.props;
+    let { tweets } = this.state;
+    tweets = tweets.filter(t => t.id !== tweet.id);
     this.setState({ tweets });
-    this.props.handleDeleteAlert();
+    handleDeleteAlert();
   }
+
   handleRetweet(tweet) {
-    let tweetObj = { id: idCounter++, text: tweet.text, liked: tweet.liked, date: new Date().toLocaleString() };
-    this.setState({ tweets: this.state.tweets.concat(tweetObj) });
-    this.props.handleRetweetAlert();
+    const { handleRetweetAlert } = this.props;
+    const tweetObj = {
+      id: idCounter + 1,
+      text: tweet.text,
+      liked: tweet.liked,
+      date: new Date().toLocaleString(),
+    };
+    this.setState(prevState => ({
+      tweets: [...prevState.tweets, tweetObj],
+    }));
+    handleRetweetAlert();
   }
+
   render() {
+    const { placeholder } = this.props;
+    const { tweets, text, charsRemaining } = this.state;
     return (
       <section className="tweetbox border-bottom">
         <div className="container">
           <div className="row">
             <div className="d-none d-md-block col-md-3">
-              <img className="avatar" src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg" alt="avatar"/>
+              <img
+                className="avatar"
+                src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg"
+                alt="avatar"
+              />
             </div>
             <div className="col-sm-12 col-md-9">
               <div className="input-group px-4">
-                <input type="text" className="form-control" 
-                  placeholder={this.props.placeholder}
-                  value={this.state.text}
-                  onChange={e => this.handleInputChange(e.target.value)}/>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder={placeholder}
+                  value={text}
+                  onChange={e => this.handleInputChange(e.target.value)}
+                />
                 <div className="input-group-append">
-                  <button className="btn btn-primary" type="submit" value="submit"
-                    onClick={() => this.handleTweet(this.state.text)} 
-                    disabled={this.state.charsRemaining < 0}>
-                    <span className="mobile-hidden">Tweet&ensp;</span><i className="fab fa-twitter"></i>
-                  </button> 
-                  <p className="my-auto mobile-hidden" style={{opacity: 0.5}}>&nbsp;{this.state.charsRemaining} chars left</p>
+                  <button
+                    className="btn btn-primary"
+                    type="submit"
+                    value="submit"
+                    onClick={() => this.handleTweet(text)}
+                    disabled={charsRemaining < 0}
+                  >
+                    <span className="mobile-hidden">Tweet&ensp;</span>
+                    <i className="fab fa-twitter" />
+                  </button>
+                  <p className="my-auto mobile-hidden" style={{ opacity: 0.5 }}>
+                    {`${charsRemaining} chars left`}
+                  </p>
                 </div>
               </div>
               <div className="container mt-4">
-                {this.state.tweets.map(((tweet, index) => 
-                  <Tweet tweet={tweet} key={index}
-                    handleLike={this.handleLike.bind(this)}
-                    handleDelete={this.handleDelete.bind(this)}
-                    handleRetweet={this.handleRetweet.bind(this)}
+                {tweets.map(tweet => (
+                  <Tweet
+                    tweet={tweet}
+                    key={tweet}
+                    handleLike={this.handleLike}
+                    handleDelete={this.handleDelete}
+                    handleRetweet={this.handleRetweet}
                   />
                 ))}
               </div>
@@ -89,3 +134,17 @@ export default class TweetBox extends React.Component {
     );
   }
 }
+
+TweetBox.propTypes = {
+  handleTweetAlert: PropTypes.func,
+  handleDeleteAlert: PropTypes.func,
+  handleRetweetAlert: PropTypes.func,
+  placeholder: PropTypes.string,
+};
+
+TweetBox.defaultProps = {
+  handleTweetAlert: () => {},
+  handleDeleteAlert: () => {},
+  handleRetweetAlert: () => {},
+  placeholder: '',
+};
