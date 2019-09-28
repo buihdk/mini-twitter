@@ -38,13 +38,13 @@ const App = () => {
   return (
     <div className="App">
       <div className={`alert alert-success ${tweetAlert ? 'shown' : 'hidden'}`}>
-        Your Tweet was sent!
+        Your tweet was sent.
       </div>
       <div className={`alert alert-danger ${deleteAlert ? 'shown' : 'hidden'}`}>
-        Your Tweet has been deleted!
+        Your tweet has been deleted.
       </div>
       <div className={`alert alert-info ${retweetAlert ? 'shown' : 'hidden'}`}>
-        Your Tweet has been retweeted!
+        Your tweet has been retweeted.
       </div>
       {weatherSnowOrRain ? <Snow /> : <Rain />}
       <header />
