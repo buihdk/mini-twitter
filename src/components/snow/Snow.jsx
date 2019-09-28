@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './Snow.less';
 
@@ -77,4 +77,4 @@ const Snow = () => (
   </div>
 );
 
-export default Snow;
+export default memo(Snow);

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import '../app/App.less';
+import './Tweet.less';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
   <div className="tweet media my-3">
@@ -60,4 +60,4 @@ Tweet.defaultProps = {
   handleDelete: () => {},
 };
 
-export default Tweet;
+export default memo(Tweet);

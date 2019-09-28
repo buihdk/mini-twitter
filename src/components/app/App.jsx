@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import TweetBox from '../tweet/TweetBox';
 import Snow from '../snow/Snow';
@@ -58,4 +58,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default memo(App);
