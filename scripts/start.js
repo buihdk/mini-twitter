@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
@@ -60,6 +61,7 @@ if (process.env.HOST) {
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
+// eslint-disable-next-line import/order
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
 
 checkBrowsers(paths.appPath, isInteractive)
@@ -126,6 +128,8 @@ checkBrowsers(paths.appPath, isInteractive)
 
       console.log(chalk.cyan('Starting the development server...\n'));
       openBrowser(urls.localUrlForBrowser);
+
+      return null;
     });
 
     ['SIGINT', 'SIGTERM'].forEach(function(sig) {
