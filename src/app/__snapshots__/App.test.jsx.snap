@@ -11,16 +11,16 @@ exports[`App renders without crashing 1`] = `
     Your tweet was sent.
   </div>
   <div
-    className="fade hidden alert alert-danger show"
-    role="alert"
-  >
-    Your tweet has been deleted.
-  </div>
-  <div
     className="fade hidden alert alert-info show"
     role="alert"
   >
     Your tweet has been retweeted.
+  </div>
+  <div
+    className="fade hidden alert alert-danger show"
+    role="alert"
+  >
+    Your tweet has been deleted.
   </div>
   <div
     className="snow"

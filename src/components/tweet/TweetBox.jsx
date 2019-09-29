@@ -5,14 +5,18 @@ import Tweet from './Tweet';
 import './TweetBox.scss';
 
 const TweetBox = ({ placeholder, handleAlert }) => {
-  const [tweets, setTweets] = useState([]);
-  const [state, setState] = useState({ text: '', charsRemain: 140 });
+  const [state, setState] = useState({
+    tweets: [],
+    text: '',
+    charsRemain: 140,
+  });
 
   const handleInputChange = inputText => {
-    setState({
+    setState(prevState => ({
+      ...prevState,
       text: inputText,
       charsRemain: 140 - inputText.length,
-    });
+    }));
   };
 
   const handleTweet = stateText => {
@@ -21,25 +25,32 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       liked: false,
       date: new Date().toLocaleString(),
     };
-    setTweets(prevTweets => [...prevTweets, tweetObj]);
-    setState({ text: '', charsRemain: 140 });
+    setState(prevState => ({
+      tweets: [...prevState.tweets, tweetObj],
+      text: '',
+      charsRemain: 140,
+    }));
     handleAlert('isTweet');
   };
 
   const handleLike = tweet => {
-    setTweets(prevTweets =>
-      prevTweets.map(t => {
+    setState(prevState => ({
+      tweets: prevState.tweets.map(t => {
         if (t.date === tweet.date)
           return { text: t.text, liked: !t.liked, date: t.date };
         return t;
       }),
-    );
-    setState({ text: '', charsRemain: 140 });
+      text: '',
+      charsRemain: 140,
+    }));
   };
 
   const handleDelete = tweet => {
-    setTweets(prevTweets => prevTweets.filter(t => t.date !== tweet.date));
-    setState({ text: '', charsRemain: 140 });
+    setState(prevState => ({
+      tweets: prevState.tweets.filter(t => t.date !== tweet.date),
+      text: '',
+      charsRemain: 140,
+    }));
     handleAlert('isDelete');
   };
 
@@ -49,12 +60,15 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       liked: tweet.liked,
       date: new Date().toLocaleString(),
     };
-    setTweets(prevTweets => [...prevTweets, tweetObj]);
-    setState({ text: '', charsRemain: 140 });
+    setState(prevState => ({
+      tweets: [...prevState.tweets, tweetObj],
+      text: '',
+      charsRemain: 140,
+    }));
     handleAlert('isRetweet');
   };
 
-  const { text, charsRemain } = state;
+  const { tweets, text, charsRemain } = state;
 
   return (
     <section className="tweetbox border-bottom">

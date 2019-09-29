@@ -25,6 +25,7 @@
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "react/jsx-indent": 0,
+    "react/jsx-props-no-spreading": 0,
     "react-hooks/rules-of-hooks": "error",
     "no-unused-vars": [2, { "args": "none" }],
     "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
