@@ -38,7 +38,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
   };
 
   const handleDelete = tweet => {
-    setTweets(prevTweets => prevTweets.filter(t => t.id !== tweet.id));
+    setTweets(prevTweets => prevTweets.filter(t => t.date !== tweet.date));
     setState({ text: '', charsRemain: 140 });
     handleAlert('isDelete');
   };

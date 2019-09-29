@@ -28,7 +28,7 @@ const App = () => {
   };
 
   const {
-    alert: { isTweet, isDelete, isReTweet },
+    alert: { isTweet, isDelete, isRetweet },
     weatherSnowOrRain,
   } = state;
   return (
@@ -36,11 +36,11 @@ const App = () => {
       <Alert className={isTweet ? 'shown' : 'hidden'} variant="success">
         Your tweet was sent.
       </Alert>
+      <Alert className={isRetweet ? 'shown' : 'hidden'} variant="info">
+        Your tweet has been retweeted.
+      </Alert>
       <Alert className={isDelete ? 'shown' : 'hidden'} variant="danger">
         Your tweet has been deleted.
-      </Alert>
-      <Alert className={isReTweet ? 'shown' : 'hidden'} variant="info">
-        Your tweet has been retweeted.
       </Alert>
       {weatherSnowOrRain ? <Snow /> : <Rain />}
       <header />
