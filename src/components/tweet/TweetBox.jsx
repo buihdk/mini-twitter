@@ -2,14 +2,9 @@ import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
 import Tweet from './Tweet';
-import './TweetBox.less';
+import './TweetBox.scss';
 
-const TweetBox = ({
-  placeholder,
-  handleTweetAlert,
-  handleDeleteAlert,
-  handleRetweetAlert,
-}) => {
+const TweetBox = ({ placeholder, handleAlert }) => {
   const [tweets, setTweets] = useState([]);
   const [state, setState] = useState({ text: '', charsRemain: 140 });
 
@@ -28,7 +23,7 @@ const TweetBox = ({
     };
     setTweets(prevTweets => [...prevTweets, tweetObj]);
     setState({ text: '', charsRemain: 140 });
-    handleTweetAlert();
+    handleAlert('isTweet');
   };
 
   const handleLike = tweet => {
@@ -45,7 +40,7 @@ const TweetBox = ({
   const handleDelete = tweet => {
     setTweets(prevTweets => prevTweets.filter(t => t.id !== tweet.id));
     setState({ text: '', charsRemain: 140 });
-    handleDeleteAlert();
+    handleAlert('isDelete');
   };
 
   const handleRetweet = tweet => {
@@ -56,7 +51,7 @@ const TweetBox = ({
     };
     setTweets(prevTweets => [...prevTweets, tweetObj]);
     setState({ text: '', charsRemain: 140 });
-    handleRetweetAlert();
+    handleAlert('isRetweet');
   };
 
   const { text, charsRemain } = state;
@@ -118,16 +113,12 @@ const TweetBox = ({
 
 TweetBox.propTypes = {
   placeholder: PropTypes.string,
-  handleTweetAlert: PropTypes.func,
-  handleDeleteAlert: PropTypes.func,
-  handleRetweetAlert: PropTypes.func,
+  handleAlert: PropTypes.func,
 };
 
 TweetBox.defaultProps = {
   placeholder: '',
-  handleTweetAlert: () => {},
-  handleDeleteAlert: () => {},
-  handleRetweetAlert: () => {},
+  handleAlert: () => {},
 };
 
 export default memo(TweetBox);

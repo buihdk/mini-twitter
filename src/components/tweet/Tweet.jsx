@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import './Tweet.less';
+import './Tweet.scss';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
   <div className="tweet media my-3">

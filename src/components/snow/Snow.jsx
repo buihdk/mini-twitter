@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import './Snow.less';
+import './Snow.scss';
 
 const Snow = () => (
   <div className="snow">
