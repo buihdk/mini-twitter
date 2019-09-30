@@ -8,7 +8,6 @@
   .avatar {
     width: 200px;
     border: 6px white solid;
-    border-radius: 50%;
     position: relative;
     top: -6rem;
   }
@@ -22,7 +21,7 @@
     border-radius: 4px !important;
   }
 
-  p {
+  .chars {
     margin-left: 8px; 
     opacity: 0.5;
   }

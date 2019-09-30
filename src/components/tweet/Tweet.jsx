@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Media from 'react-bootstrap/Media';
+import { Media, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faRetweet,
@@ -13,15 +13,15 @@ import './Tweet.scss';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
   <Media className="tweet my-3">
-    <img
-      className="avatar-tweet mr-3"
+    <Image
+      roundedCircle
+      width="64px"
+      className="mr-3"
       src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg"
-      alt="avatar-tweet"
-      width="200px"
     />
     <Media.Body>
       <h5 className="mt-0">
-        {'Khoa Bui '}
+        {`Khoa Bui `}
         <span className="sub-text">
           {`@buihdk ${moment(tweet.date).fromNow()}`}
         </span>

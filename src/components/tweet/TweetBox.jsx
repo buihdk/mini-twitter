@@ -6,6 +6,7 @@ import {
   Container,
   Row,
   Col,
+  Image,
   InputGroup,
   FormControl,
   Button,
@@ -39,7 +40,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
     const tweetObj = {
       text: tweetText,
       liked: false,
-      date: new Date().toLocaleString(),
+      date: new Date().toISOString(),
     };
     setState(prevState => ({
       tweets: [...prevState.tweets, tweetObj],
@@ -100,8 +101,8 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       <Container>
         <Row>
           <Col md={3} className="d-none d-md-block">
-            <img
-              alt="avatar"
+            <Image
+              roundedCircle
               className="avatar"
               src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg"
             />
@@ -124,7 +125,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
                   <span className="mobile-hidden">Tweet </span>
                   <FontAwesomeIcon icon={faTwitter} />
                 </Button>
-                <p className="my-auto mobile-hidden">
+                <p className="chars my-auto mobile-hidden">
                   {`${state.charsRemain} chars left`}
                 </p>
               </InputGroup.Append>

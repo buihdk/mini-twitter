@@ -8,7 +8,7 @@ import './CustomAlert.scss';
 
 const CustomAlert = ({ isShown, variant, message }) => (
   <Alert
-    className={clsx('customAlert', isShown ? 'shown' : 'hidden')}
+    className={clsx('custom-alert', isShown ? 'shown' : 'hidden')}
     variant={variant}
   >
     {message}

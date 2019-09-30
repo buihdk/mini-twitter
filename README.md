@@ -4,11 +4,13 @@ Author: **Khoa Bui**
 
 ## Roadmap:
 * [ ] Add in better state management with a framework like Redux.
-* [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets
+* [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets.
+* [ ] Add a toggle to switch between Snow and Rain animations.
+* [ ] Add unit tests for all components.
 * [x] Added Bootstrap and Fontawesome packages for styling.
 * [x] Added user avatars and “time ago” to Tweets.
 * [x] Added background image and snow animation.
-* [x] Created a Re-tweet button that “copies” the Tweet.
+* [x] Created a Re-tweet Button that “copies” the Tweet.
 * [x] Added alert animations for when a Tweet is Tweeted, Deleted, or Re-tweeted.
 * [x] Added an ID field to each Tweet.
 
