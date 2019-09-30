@@ -5,7 +5,7 @@ Author: **Khoa Bui**
 ## Roadmap:
 * [ ] Add in better state management with a framework like Redux.
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets
-* [x] Styled using Bootstrap framework and Fontawesome.
+* [x] Added Bootstrap and Fontawesome packages for styling.
 * [x] Added user avatars and “time ago” to Tweets.
 * [x] Added background image and snow animation.
 * [x] Created a Re-tweet button that “copies” the Tweet.
@@ -16,7 +16,7 @@ Author: **Khoa Bui**
 https://www.buihdk.com/mini-twitter/
 
 ## License
-    © Khoa Bui 2018 
+    © Khoa Bui 2019
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

@@ -22,7 +22,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
     charsRemain: 140,
   });
 
-  const inputRef = useRef(state.text);
+  const inputRef = useRef();
 
   const handleInputChange = e => {
     const inputText = e.target.value;
@@ -84,10 +84,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
     handleAlert('isRetweet');
   };
 
-  const { tweets, text, charsRemain } = state;
-
   const handleEnterKeyPress = e => {
-    e.preventDefault();
     if (e.keyCode === 13) handleTweet();
   };
 
@@ -114,7 +111,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
               <FormControl
                 ref={inputRef}
                 placeholder={placeholder}
-                value={text}
+                value={state.text}
                 onChange={handleInputChange}
               />
               <InputGroup.Append>
@@ -122,7 +119,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
                   type="submit"
                   value="submit"
                   onClick={handleTweet}
-                  disabled={charsRemain < 0}
+                  disabled={state.charsRemain < 0}
                 >
                   <span className="mobile-hidden">Tweet </span>
                   <FontAwesomeIcon icon={faTwitter} />
@@ -131,13 +128,13 @@ const TweetBox = ({ placeholder, handleAlert }) => {
                   className="my-auto mobile-hidden"
                   style={{ opacity: 0.5, marginLeft: '8px' }}
                 >
-                  {`${charsRemain} chars left`}
+                  {`${state.charsRemain} chars left`}
                 </p>
               </InputGroup.Append>
             </InputGroup>
-            <Container className="container mt-4">
-              {tweets &&
-                tweets.map(tweet => (
+            <Container className="tweets mt-4">
+              {state.tweets &&
+                state.tweets.map(tweet => (
                   <Tweet
                     tweet={tweet}
                     key={tweet.date}

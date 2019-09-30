@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-
+import moment from 'moment';
 import Media from 'react-bootstrap/Media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -22,7 +22,9 @@ const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
     <Media.Body>
       <h5 className="mt-0">
         {'Khoa Bui '}
-        <span className="sub-text">{`@buihdk ${tweet.date}`}</span>
+        <span className="sub-text">
+          {`@buihdk ${moment(tweet.date).fromNow()}`}
+        </span>
       </h5>
       <p>{tweet.text}</p>
       <FontAwesomeIcon icon={faRetweet} onClick={() => handleRetweet(tweet)} />
