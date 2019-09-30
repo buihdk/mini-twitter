@@ -124,10 +124,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
                   <span className="mobile-hidden">Tweet </span>
                   <FontAwesomeIcon icon={faTwitter} />
                 </Button>
-                <p
-                  className="my-auto mobile-hidden"
-                  style={{ opacity: 0.5, marginLeft: '8px' }}
-                >
+                <p className="my-auto mobile-hidden">
                   {`${state.charsRemain} chars left`}
                 </p>
               </InputGroup.Append>

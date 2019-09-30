@@ -13,7 +13,7 @@ Author: **Khoa Bui**
 * [x] Added an ID field to each Tweet.
 
 ## Demo
-https://www.buihdk.com/mini-twitter/
+https://buihdk.github.io/mini-twitter/
 
 ## License
     © Khoa Bui 2019

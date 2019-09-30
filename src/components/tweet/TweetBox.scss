@@ -4,12 +4,27 @@
   width: 100%;
   background-color: #fff;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+
+  .avatar {
+    width: 200px;
+    border: 6px white solid;
+    border-radius: 50%;
+    position: relative;
+    top: -6rem;
+  }
+
+  .form-control {
+    border-radius: 4px !important;
+  }
+
+  .btn {
+    margin-left: 8px; 
+    border-radius: 4px !important;
+  }
+
+  p {
+    margin-left: 8px; 
+    opacity: 0.5;
+  }
 }
 
-.avatar {
-  width: 200px;
-  border: 6px white solid;
-  border-radius: 50%;
-  position: relative;
-  top: -6rem;
-}

@@ -461,7 +461,7 @@ exports[`App renders without crashing 1`] = `
             </div>
           </div>
           <div
-            className="container mt-4 container"
+            className="tweets mt-4 container"
           />
         </div>
       </div>
