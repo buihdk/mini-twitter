@@ -397,8 +397,7 @@ exports[`App renders without crashing 1`] = `
           className="d-none d-md-block col-md-3"
         >
           <img
-            alt="avatar"
-            className="avatar"
+            className="avatar rounded-circle"
             src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg"
           />
         </div>
@@ -448,13 +447,7 @@ exports[`App renders without crashing 1`] = `
                 </svg>
               </button>
               <p
-                className="my-auto mobile-hidden"
-                style={
-                  Object {
-                    "marginLeft": "8px",
-                    "opacity": 0.5,
-                  }
-                }
+                className="chars my-auto mobile-hidden"
               >
                 140 chars left
               </p>
@@ -468,7 +461,7 @@ exports[`App renders without crashing 1`] = `
     </div>
   </section>
   <div
-    className="fade customAlert hidden alert show"
+    className="fade custom-alert hidden alert show"
     role="alert"
   >
     
