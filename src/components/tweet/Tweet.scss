@@ -1,7 +1,9 @@
+$box-shadow-color: rgba(10, 10, 10, 0.1);
+
 .tweet {
   background-color: white;
   padding: 1rem;
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px $box-shadow-color, 0 0 0 1px $box-shadow-color;
   word-wrap: break-word;
 }
 
@@ -10,21 +12,21 @@
   border-radius: 50%;
 }
 
-.fa-retweet,
-.fa-heart,
-.fa-trash-alt,
-.sub-text {
+.sub-text  {
   color: lightgray;
   font-size: 16px;
 }
 
-.fa-retweet:hover,
-.fa-heart:hover,
-.fa-trash-alt:hover {
-  color: gray;
-  cursor: pointer;
+.media-body > svg {
+  color: lightgray;
+  font-size: 16px;
+  margin-right: 8px;
+  &:hover {
+    color: gray;
+    cursor: pointer;
+  }
 }
 
-.fa-heart.liked {
-  color: red;
+.liked {
+  color: red !important;
 }

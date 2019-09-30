@@ -23,7 +23,7 @@ const App = () => {
     <div className="App">
       {isSnow ? <Snow /> : <Rain />}
       <header />
-      <TweetBox placeholder="What's your status?" handleAlert={handleAlert} />
+      <TweetBox placeholder="What's happening?" handleAlert={handleAlert} />
       <CustomAlert isShown={activeAlert} {...alertProps[activeAlert]} />
     </div>
   );

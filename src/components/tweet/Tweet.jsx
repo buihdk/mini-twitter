@@ -1,41 +1,39 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+import Media from 'react-bootstrap/Media';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faRetweet,
+  faHeart,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
+
 import './Tweet.scss';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
-  <div className="tweet media my-3">
+  <Media className="tweet my-3">
     <img
       className="avatar-tweet mr-3"
       src="https://pbs.twimg.com/profile_images/553467511211970560/nBE77dF0_400x400.jpeg"
       alt="avatar-tweet"
       width="200px"
     />
-    <div className="media-body">
+    <Media.Body>
       <h5 className="mt-0">
         {'Khoa Bui '}
         <span className="sub-text">{`@buihdk ${tweet.date}`}</span>
       </h5>
       <p>{tweet.text}</p>
-      <i
-        role="presentation"
-        className="fas fa-retweet"
-        onClick={() => handleRetweet(tweet)}
-      />
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <i
-        role="presentation"
-        className={tweet.liked ? 'fas fa-heart liked' : 'fas fa-heart'}
+      <FontAwesomeIcon icon={faRetweet} onClick={() => handleRetweet(tweet)} />
+      <FontAwesomeIcon
+        icon={faHeart}
         onClick={() => handleLike(tweet)}
+        className={tweet.liked ? 'liked' : ''}
       />
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <i
-        role="presentation"
-        className="far fa-trash-alt"
-        onClick={() => handleDelete(tweet)}
-      />
-    </div>
-  </div>
+      <FontAwesomeIcon icon={faTrashAlt} onClick={() => handleDelete(tweet)} />
+    </Media.Body>
+  </Media>
 );
 
 Tweet.propTypes = {
