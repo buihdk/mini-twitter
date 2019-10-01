@@ -466,5 +466,32 @@ exports[`App renders without crashing 1`] = `
   >
     
   </div>
+  <div
+    className="toggleContainer"
+  >
+    <span
+      className="label"
+    >
+      Snow
+    </span>
+    <label
+      className="switch"
+      htmlFor="toggle"
+    >
+      <input
+        id="toggle"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="slider round"
+      />
+    </label>
+    <span
+      className="label"
+    >
+      Rain
+    </span>
+  </div>
 </div>
 `;
