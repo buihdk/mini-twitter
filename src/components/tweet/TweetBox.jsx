@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tweet from './Tweet';
 import './TweetBox.scss';
 
-const TweetBox = ({ placeholder, handleAlert }) => {
+const TweetBox = ({ placeholder, handleAlert, setAlert }) => {
   const [state, setState] = useState({
     tweets: [],
     text: '',
@@ -47,7 +47,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       text: '',
       charsRemain: 140,
     }));
-    handleAlert('isTweet');
+    handleAlert({ type: 'isTweet', setAlert });
   };
 
   const handleLike = tweet => {
@@ -68,7 +68,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       text: '',
       charsRemain: 140,
     }));
-    handleAlert('isDelete');
+    handleAlert({ type: 'isDelete', setAlert });
   };
 
   const handleRetweet = tweet => {
@@ -82,7 +82,7 @@ const TweetBox = ({ placeholder, handleAlert }) => {
       text: '',
       charsRemain: 140,
     }));
-    handleAlert('isRetweet');
+    handleAlert({ type: 'isRetweet', setAlert });
   };
 
   const handleEnterKeyPress = e => {
@@ -152,11 +152,13 @@ const TweetBox = ({ placeholder, handleAlert }) => {
 TweetBox.propTypes = {
   placeholder: PropTypes.string,
   handleAlert: PropTypes.func,
+  setAlert: PropTypes.func,
 };
 
 TweetBox.defaultProps = {
   placeholder: '',
   handleAlert: () => {},
+  setAlert: () => {},
 };
 
 export default memo(TweetBox);

@@ -1,6 +1,8 @@
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
-import { create, act } from 'react-test-renderer';
+import { mount } from 'enzyme';
+import toJSON from 'enzyme-to-json';
+import { act } from 'react-dom/test-utils';
 
 import App from './App';
 
@@ -19,10 +21,14 @@ afterEach(() => {
 
 describe('App', () => {
   let wrapper;
-  test('renders without crashing', () => {
-    act(() => {
-      wrapper = create(<App />, container);
-    });
-    expect(wrapper.toJSON()).toMatchSnapshot();
+  act(() => {
+    wrapper = mount(<App />, container);
+  });
+  test('renders snow animation without crashing', () => {
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+  test('renders rain animation without crashing', () => {
+    wrapper.find('#toggle').simulate('click');
+    expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });
