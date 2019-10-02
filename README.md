@@ -2,18 +2,15 @@
 
 Author: **Khoa Bui**
 
-## Roadmap:
-* [ ] Add in better state management with a framework like Redux.
+## Checklist:
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets.
-* [x] Add .env with absolute imports.
-* [x] Add a toggle to switch between Snow and Rain animations.
-* [x] Add unit tests for all components.
-* [x] Added Bootstrap and Fontawesome packages for styling.
-* [x] Added user avatars and “time ago” to Tweets.
+* [x] Add `.env` with absolute imports.
+* [x] Add a toggle to switch between snow and rain animations.
+* [x] Add unit tests for all components (`yarn test --coverage --runInBand --watchAll` to run).
+* [x] Added bootstrap and fontawesome for styling.
+* [x] Added user avatars and “time ago” to tweets.
 * [x] Added background image and snow animation.
-* [x] Created a Re-tweet Button that “copies” the Tweet.
-* [x] Added alert animations for when a Tweet is Tweeted, Deleted, or Re-tweeted.
-* [x] Added an ID field to each Tweet.
+* [x] Added alert animations for when a Tweet is tweeted, deleted, or re-tweeted.
 
 ## Demo
 https://buihdk.github.io/mini-twitter/
