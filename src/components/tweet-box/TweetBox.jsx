@@ -13,8 +13,8 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { noop } from '../../utils';
-import Tweet from '../tweet/Tweet';
+import Tweet from 'components/tweet/Tweet';
+import { noop } from 'utils';
 import './TweetBox.scss';
 
 const TweetBox = ({ placeholder, handleAlert, setAlert }) => {

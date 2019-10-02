@@ -5,8 +5,9 @@ Author: **Khoa Bui**
 ## Roadmap:
 * [ ] Add in better state management with a framework like Redux.
 * [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets.
+* [x] Add .env with absolute imports.
 * [x] Add a toggle to switch between Snow and Rain animations.
-* [ ] Add unit tests for all components.
+* [x] Add unit tests for all components.
 * [x] Added Bootstrap and Fontawesome packages for styling.
 * [x] Added user avatars and “time ago” to Tweets.
 * [x] Added background image and snow animation.

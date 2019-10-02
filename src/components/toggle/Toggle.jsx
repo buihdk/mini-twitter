@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import { noop } from '../../utils';
+import { noop } from 'utils';
 import './Toggle.scss';
 
 const Toggle = ({ lLabel, rLabel, isRain, toggle }) => (

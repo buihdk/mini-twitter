@@ -9,7 +9,7 @@ import {
   faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { noop } from '../../utils';
+import { noop } from 'utils';
 import './Tweet.scss';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
