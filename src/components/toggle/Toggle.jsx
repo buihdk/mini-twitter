@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+import { noop } from '../../utils';
 import './Toggle.scss';
 
 const Toggle = ({ lLabel, rLabel, isRain, toggle }) => (
@@ -25,7 +26,7 @@ Toggle.defaultProps = {
   lLabel: '',
   rLabel: '',
   isRain: false,
-  toggle: () => {},
+  toggle: noop,
 };
 
 export default memo(Toggle);

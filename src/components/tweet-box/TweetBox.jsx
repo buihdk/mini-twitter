@@ -13,7 +13,8 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Tweet from './Tweet';
+import { noop } from '../../utils';
+import Tweet from '../tweet/Tweet';
 import './TweetBox.scss';
 
 const TweetBox = ({ placeholder, handleAlert, setAlert }) => {
@@ -157,8 +158,8 @@ TweetBox.propTypes = {
 
 TweetBox.defaultProps = {
   placeholder: '',
-  handleAlert: () => {},
-  setAlert: () => {},
+  handleAlert: noop,
+  setAlert: noop,
 };
 
 export default memo(TweetBox);

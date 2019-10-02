@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle renders without crashing 1`] = `
+<div
+  className="toggleContainer"
+>
+  <span
+    className="label"
+  />
+  <label
+    className="switch"
+    htmlFor="toggle"
+  >
+    <input
+      id="toggle"
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="slider round"
+    />
+  </label>
+  <span
+    className="label"
+  />
+</div>
+`;

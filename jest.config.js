@@ -4,12 +4,13 @@ module.exports = {
   collectCoverageFrom: [
     'src/app/**/*.{js,jsx}',
     'src/components/**/*.{js,jsx}',
+    'src/utils/**/*.{js,jsx}',
   ],
   coverageDirectory: '<rootDir>/coverage/',
   coverageReporters: ['lcov', 'text', 'text-summary'],
   moduleFileExtensions: ['js', 'jsx'],
-  setupFiles: ['react-app-polyfill/jsdom', './setup.enzyme.js'],
-  setupFilesAfterEnv: [],
+  setupFiles: ['react-app-polyfill/jsdom'],
+  setupFilesAfterEnv: ['./enzyme.setup.js'],
   testEnvironment: 'jest-environment-jsdom-fourteen',
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',

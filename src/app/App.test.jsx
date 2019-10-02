@@ -24,11 +24,14 @@ describe('App', () => {
   act(() => {
     wrapper = mount(<App />, container);
   });
+
   test('renders snow animation without crashing', () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
+
   test('renders rain animation without crashing', () => {
     wrapper.find('#toggle').simulate('click');
+
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });

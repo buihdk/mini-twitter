@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders rain without crashing 1`] = `
+exports[`App renders rain animation without crashing 1`] = `
 <Memo(App)>
   <div
     className="App"
@@ -880,7 +880,7 @@ exports[`App renders rain without crashing 1`] = `
 </Memo(App)>
 `;
 
-exports[`App renders snow without crashing 1`] = `
+exports[`App renders snow animation without crashing 1`] = `
 <Memo(App)>
   <div
     className="App"

@@ -9,6 +9,7 @@ import {
   faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { noop } from '../../utils';
 import './Tweet.scss';
 
 const Tweet = ({ tweet, handleRetweet, handleLike, handleDelete }) => (
@@ -55,9 +56,9 @@ Tweet.defaultProps = {
     liked: false,
     date: '',
   },
-  handleRetweet: () => {},
-  handleLike: () => {},
-  handleDelete: () => {},
+  handleRetweet: noop,
+  handleLike: noop,
+  handleDelete: noop,
 };
 
 export default memo(Tweet);

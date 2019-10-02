@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomAlert renders without crashing 1`] = `
+<Alert
+  className="custom-alert shown"
+  closeLabel="Close alert"
+  show={true}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "displayName": "Fade",
+      "render": [Function],
+    }
+  }
+  variant="success"
+>
+  test
+</Alert>
+`;

@@ -1,14 +1,14 @@
 import React, { useState, memo } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import TweetBox from '../components/tweet/TweetBox';
+import TweetBox from '../components/tweet-box/TweetBox';
 import CustomAlert from '../components/alert/CustomAlert';
 import Toggle from '../components/toggle/Toggle';
 import Snow from '../components/snow/Snow';
 import Rain from '../components/rain/Rain';
-import * as alertProps from '../constants';
+import { alertProps } from '../utils';
 
-import { handleAlert } from './App.utils';
+import handleAlert from './handleAlert';
 import './App.scss';
 
 const App = () => {
