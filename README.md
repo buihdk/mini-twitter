@@ -3,10 +3,10 @@
 Author: **Khoa Bui**
 
 ## Checklist:
-* [ ] Connect with Twitter API to create real Tweet and pre-populate existing Tweets.
+* [x] Replace class components with functional components and hooks.
+* [x] Add unit tests for all components (`yarn test --coverage --runInBand --watchAll` to run).
 * [x] Add `.env` with absolute imports.
 * [x] Add a toggle to switch between snow and rain animations.
-* [x] Add unit tests for all components (`yarn test --coverage --runInBand --watchAll` to run).
 * [x] Added bootstrap and fontawesome for styling.
 * [x] Added user avatars and “time ago” to tweets.
 * [x] Added background image and snow animation.
